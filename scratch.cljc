@@ -1,7 +1,7 @@
 ;; prototype with basic styling and buttons
 ;;  all js
+;;  tachyons
 
-;; styling with tachions
 
 ;; add posts
 ;;  editor
@@ -9,3 +9,12 @@
 
 ;; dynamic posts
 ;;  cookies
+
+
+
+
+;; TODO
+;;
+;; figwheel :connect-url
+;; footer
+;; language

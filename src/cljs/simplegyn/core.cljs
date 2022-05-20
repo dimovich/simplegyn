@@ -1,9 +1,10 @@
 (ns ^:figwheel-hooks simplegyn.core
-  (:require [reagent.dom :as rd]))
+  (:require [reagent.dom :as rd]
+            [simplegyn.components :as sc]))
 
 
 (defn app []
-  [:div "Hello World!"])
+  [sc/index])
 
 
 (defn ^:after-load reload []

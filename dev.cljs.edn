@@ -1,5 +1,6 @@
 ^{:css-dirs ["resources/public/css"]
   :watch-dirs ["src/cljs" "src/cljc"]
+  :connect-url "ws://[[client-hostname]]:[[client-port]]/figwheel-connect"
   :open-url false}
 {:main simplegyn.core
  :output-to "resources/public/js/main.js"

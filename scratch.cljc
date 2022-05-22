@@ -15,6 +15,9 @@
 
 ;; TODO
 ;;
-;; figwheel :connect-url
 ;; footer
 ;; language
+
+
+;; https://tachyons.io/
+;; http://tachyons.io/docs/typography/scale/

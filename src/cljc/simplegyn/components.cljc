@@ -6,9 +6,9 @@
    [:img {:src "img/logo.svg"}]])
 
 
-(defn button [text & [opts]]
+(defn nav-button [text & [opts]]
   [:a (merge
-       {:class "f4 f5-ns link bg-animate black-80 hover-bg-light-pink dib pa3 ph4-l"
+       {:class "f5 f4-ns link bg-animate black-80 hover-bg-light-pink dib pa3 ph4-l"
         :href "#"}
        opts)
    text])
@@ -16,12 +16,35 @@
 
 (defn nav []
   [:nav {:class "bt bb tc mw6 center mt2"}
-   [button "Home"]
-   [button "Posts"]
-   [button "About"]])
+   [nav-button "Home"]
+   [nav-button "Posts"]
+   [nav-button "About"]])
+
+
+
+(defn footer []
+  [:footer {:class "pv4 ph3 ph5-m ph6-l mid-gray"}
+   [:small {:class "f6 db tc"}
+    "© 2022 "
+    [:b {:class "ttu"} "SimpleGyn"]
+    "., All Rights Reserved"]
+   [:div {:class "tc mt3"}
+    [:a {:class "f6 dib ph2 link mid-gray dim"
+         :href "/language" :title "Language"}
+     "Language"]
+    [:a {:class "f6 dib ph2 link mid-gray dim"
+         :href "/terms" :title "Terms"}
+     "Terms of Use"]
+    [:a {:class "f6 dib ph2 link mid-gray dim"
+         :href "/privacy" :title "Privacy"}
+     "Privacy"]]])
+
 
 
 (defn index []
-  [:header {:class "bg-white pv2 tc"}
-   [logo]
-   [nav]])
+  [:<>
+   [:header {:class "bg-white pv2 tc serif"}
+    [logo]
+    [nav]]
+
+   [footer]])

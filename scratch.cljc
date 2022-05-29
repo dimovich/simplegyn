@@ -7,9 +7,9 @@
 ;;  editor
 ;;  no js
 
+
 ;; dynamic posts
 ;;  cookies
-
 
 
 
@@ -17,6 +17,8 @@
 ;;
 ;; footer
 ;; language
+;;  cookie, check browser settings
+;;
 
 
 ;; https://tachyons.io/

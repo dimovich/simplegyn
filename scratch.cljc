@@ -1,11 +1,11 @@
 ;; prototype with basic styling and buttons
-;;  all js
-;;  tachyons
-
-
 ;; add posts
-;;  editor
-;;  no js
+
+
+;; no js
+
+;; post editor
+
 
 
 ;; dynamic posts
@@ -21,5 +21,5 @@
 ;;
 
 
-;; https://tachyons.io/
-;; http://tachyons.io/docs/typography/scale/
+
+;;  debug-grid-16-solid

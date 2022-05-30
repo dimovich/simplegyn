@@ -40,11 +40,14 @@
      "Privacy"]]])
 
 
+(defn posts []
+  [:div])
+
 
 (defn index []
   [:<>
-   [:header {:class "bg-white pv2 tc serif"}
+   [:header {:class "pv2 tc serif"}
     [logo]
     [nav]]
-
+   [posts]
    [footer]])

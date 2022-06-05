@@ -40,8 +40,17 @@
      "Privacy"]]])
 
 
-(defn posts []
-  [:div])
+#?(:cljs
+   (defn posts []
+     [:section
+      {:class "mw7 center avenir"}
+      [:h2 {:class "baskerville fw1 ph3 ph0-l"}
+       "Posts"]
+      [:article {:class "bt bb b--black-10"}
+       [:div
+        {:class "w-100 w-60-ns"
+         :dangerouslySetInnerHTML
+         {:__html "<b>These are some <i>posts</i>.</b>"}}]]]))
 
 
 (defn index []

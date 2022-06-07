@@ -1,6 +1,7 @@
 ;; prototype with basic styling and buttons
 ;; add posts
 
+
 ;; Posts
 
 ;; markdown -or- hiccup -or- wysiwyg editor
@@ -39,3 +40,8 @@
 ;; absolute / relative
 
 
+
+
+
+;; markdown and tachyons customization
+;; https://blakewilliams.me/posts/jekyll-markdown-and-tachyons

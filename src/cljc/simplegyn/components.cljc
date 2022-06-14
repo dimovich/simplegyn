@@ -1,6 +1,9 @@
 (ns simplegyn.components)
 
 
+(defn merge-opts [m1 m2]
+  (merge-with #(str %1 " " %2) m1 m2))
+
 
 (defn logo []
   [:div {:class "w-60 w-30-ns center"}
@@ -88,34 +91,83 @@
 
 (defn quote [text author]
   [:div {:class "pv3"}
-   [:blockquote {:class "athelas ml0 mt0 pl4 black-90 bl bw2 b--light-pink"}
+   [:blockquote {:class "athelas ml0 mv0 pl4 black-90 bl bw2 b--light-pink"}
     [:p {:class "f4 lh-copy measure mt0"}
      (str "„" text "“")]
     [:cite {:class "f6 ttu tracked fs-normal"}
      (str "― " author)]]])
 
 
+(defn quote2 [text]
+  [:blockquote {:class "athelas ph0 pv2 mh0 tc b i measure"}
+   [:p {:class "f4 lh-copy"}
+    text]])
+
+
+(defn paragraph
+  ([text] [paragraph {} text])
+  ([opts text]
+   [:p (-> {:class "lh-copy measure"}
+           (merge-opts opts))
+    text]))
+
+
+(defn article-title [title author]
+  [:header {:class "mb3"}
+   [:h1 {:class "mt4 mb3 lh-title"}
+    title]
+   [:time {:class "f6 ttu tracked gray"}
+    author]])
+
 
 (defn section-post [post]
   [:section {:class "mw6 center avenir ph3 ph0-l black-80"}
 
-   [:header {:class "mb3"}
-    [:h1 {:class "mt4 mb3 lh-title"}
-     (:title post)]
-    [:time {:class "f6 ttu tracked gray"}
-     (:author post)]]
+   [article-title (:title post) (:author post)]
    
    [:div
     [quote
      "Lasst den Geist eures Denkens erneuern und zieht euer neues Ich an."
      "Epheser 4:23"]
     
-    [:p {:class "lh-copy measure mt0"}
+    [paragraph
      "Neuroplastizität (die Fähigkeit des Gehirns, sich als Reaktion
      auf das Denken zu verändern) kann sowohl für uns als auch gegen
      uns arbeiten, denn das, worüber wir am meisten nachdenken, wird
      wachsen – das gilt sowohl für das Positive als auch für das
-     Negative."]]])
+     Negative."]
+
+    [paragraph "Datum:"]
+
+    [paragraph {:class "b"}
+     "Atme 5 Mal tief ein und aus!"]
+
+    [quote2
+     [:<>
+      "Ich schöpfe meine Welt heute…" [:br]
+      "Ich bin wundervoll, ich bin geliebt!"]]
+
+    [paragraph {:class "underline b"}
+     "Drei Dinge, für die ich heute dankbar bin:"]
+    [paragraph {:style {:border-bottom "1px dotted"}} "1."]
+    [paragraph {:style {:border-bottom "1px dotted"}} "2."]
+    [paragraph {:style {:border-bottom "1px dotted"}} "3."]
+
+
+    [:h2 {:class "pt4"} "Morgenreflektion"]
+
+    [paragraph
+     [:<>
+      [:strong "Sei liebevoll zu Dir selbst:"] [:br]
+      [:strong "in Gedanken, zu Deinem Körper und Deiner Seele."] [:br]
+      "Wie kann ich heute Liebe gegenüber mir selbst zeigen:"]]
+
+    [paragraph {:style {:border-bottom "1px dotted"}} [:br]]
+    [paragraph {:style {:border-bottom "1px dotted"}} [:br]]
+    [paragraph {:style {:border-bottom "1px dotted"}} [:br]]
+    [paragraph {:style {:border-bottom "1px dotted"}} [:br]]
+
+    ]])
 
 
 

@@ -1,17 +1,22 @@
 ;; prototype with basic styling and buttons
-;; add posts
+;;
+;; add posts [DONE]
+;; add about
+
+;; Backend
+;; routing
+
 
 
 ;; Posts
 
-;; markdown -or- hiccup -or- wysiwyg editor
+;; markdown -or- hiccup -or- wysiwyg editor -or- selmer
 ;; https://github.com/yogthos/markdown-clj
 
 
 
 ;; tailwind
 
-;; no js
 ;; post editor
 ;; language
 ;;  cookie, check browser settings

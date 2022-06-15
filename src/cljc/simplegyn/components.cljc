@@ -48,22 +48,6 @@
 
 
 
-(defn get-posts []
-  [{:title "Dankbarkeitjournal"
-    :author "Mariana Munteanu"
-    :summary "Neuroplastizität (die Fähigkeit des Gehirns, sich als
-       Reaktion auf das Denken zu verändern) kann sowohl für uns als
-       auch gegen uns arbeiten, denn das, worüber wir am meisten
-       nachdenken, wird wachsen – das gilt sowohl für das Positive als
-       auch für das Negative."}
-
-   {:title "Allgemeine Schritte"
-    :author "Mariana Munteanu"
-    :summary "Diät: Keto-diät.Diät nach Budwig Eigene Gesundheit in
-       eigenen Händen nehmen!"}])
-
-
-
 (defn post-summary [post]
   [:article
    [:a {:class "db pv4 ph3 ph0-l no-underline black dim"
@@ -90,7 +74,7 @@
 
 
 (defn quote [text author]
-  [:div {:class "pv3"}
+  [:div {:class "pb3 mt3"}
    [:blockquote {:class "athelas ml0 mv0 pl4 black-90 bl bw2 b--light-pink"}
     [:p {:class "f4 lh-copy measure mt0"}
      (str "„" text "“")]
@@ -113,70 +97,166 @@
 
 
 (defn article-title [title author]
-  [:header {:class "mb3"}
+  [:header {:class "mb4"}
    [:h1 {:class "mt4 mb3 lh-title"}
     title]
    [:time {:class "f6 ttu tracked gray"}
     author]])
 
 
-(defn section-post [post]
-  [:section {:class "mw6 center avenir ph3 ph0-l black-80"}
 
-   [article-title (:title post) (:author post)]
-   
-   [:div
-    [quote
-     "Lasst den Geist eures Denkens erneuern und zieht euer neues Ich an."
-     "Epheser 4:23"]
-    
-    [paragraph
-     "Neuroplastizität (die Fähigkeit des Gehirns, sich als Reaktion
+(def posts
+  [{:title "Dankbarkeitjournal"
+    :author "Mariana Munteanu"
+    :summary "Neuroplastizität (die Fähigkeit des Gehirns, sich als
+       Reaktion auf das Denken zu verändern) kann sowohl für uns als
+       auch gegen uns arbeiten, denn das, worüber wir am meisten
+       nachdenken, wird wachsen – das gilt sowohl für das Positive als
+       auch für das Negative."
+    :post
+    [:section {:class "mw6 center avenir ph3 ph0-l"}
+
+     [article-title "Dankbarkeitjournal" "Mariana Munteanu"]
+     
+     [:div
+      [quote
+       "Lasst den Geist eures Denkens erneuern und zieht euer neues Ich an."
+       "Epheser 4:23"]
+      
+      [paragraph
+       "Neuroplastizität (die Fähigkeit des Gehirns, sich als Reaktion
      auf das Denken zu verändern) kann sowohl für uns als auch gegen
      uns arbeiten, denn das, worüber wir am meisten nachdenken, wird
      wachsen – das gilt sowohl für das Positive als auch für das
      Negative."]
 
-    [paragraph "Datum:"]
+      [paragraph "Datum:"]
 
-    [paragraph {:class "b"}
-     "Atme 5 Mal tief ein und aus!"]
+      [paragraph {:class "b"}
+       "Atme 5 Mal tief ein und aus!"]
 
-    [quote2
-     [:<>
-      "Ich schöpfe meine Welt heute…" [:br]
-      "Ich bin wundervoll, ich bin geliebt!"]]
+      [quote2
+       [:span
+        "Ich schöpfe meine Welt heute…" [:br]
+        "Ich bin wundervoll, ich bin geliebt!"]]
 
-    [paragraph {:class "underline b"}
-     "Drei Dinge, für die ich heute dankbar bin:"]
-    [paragraph {:style {:border-bottom "1px dotted"}} "1."]
-    [paragraph {:style {:border-bottom "1px dotted"}} "2."]
-    [paragraph {:style {:border-bottom "1px dotted"}} "3."]
+      [paragraph {:class "underline b"}
+       "Drei Dinge, für die ich heute dankbar bin:"]
+      [paragraph {:style {:border-bottom "1px dotted"}} "1."]
+      [paragraph {:style {:border-bottom "1px dotted"}} "2."]
+      [paragraph {:style {:border-bottom "1px dotted"}} "3."]
 
 
-    [:h2 {:class "pt4"} "Morgenreflektion"]
+      [:h2 {:class "pt4"} "Morgenreflektion"]
 
-    [paragraph
-     [:<>
-      [:strong "Sei liebevoll zu Dir selbst:"] [:br]
-      [:strong "in Gedanken, zu Deinem Körper und Deiner Seele."] [:br]
-      "Wie kann ich heute Liebe gegenüber mir selbst zeigen:"]]
+      [paragraph {:class "b"}
+       "Sei liebevoll zu Dir selbst:"]
+      [paragraph {:class "b"}
+       "in Gedanken, zu Deinem Körper und Deiner Seele."]
+      [paragraph
+       "Wie kann ich heute Liebe gegenüber mir selbst zeigen:"]
 
-    [paragraph {:style {:border-bottom "1px dotted"}} [:br]]
-    [paragraph {:style {:border-bottom "1px dotted"}} [:br]]
-    [paragraph {:style {:border-bottom "1px dotted"}} [:br]]
-    [paragraph {:style {:border-bottom "1px dotted"}} [:br]]
+      [paragraph {:style {:border-bottom "1px dotted"}} [:br]]
+      [paragraph {:style {:border-bottom "1px dotted"}} [:br]]
+      [paragraph {:style {:border-bottom "1px dotted"}} [:br]]
 
-    ]])
+      [:br]
+
+      [paragraph {:class "b"}
+       "Lerne zu leben und sammele Erinnerungen."]
+
+      [paragraph {:class "i"}
+       "Was würdest Du heute gerne Neues ausprobieren?"]
+
+      [paragraph {:style {:border-bottom "1px dotted"}} [:br]]
+      [paragraph {:style {:border-bottom "1px dotted"}} [:br]]
+      [paragraph {:style {:border-bottom "1px dotted"}} [:br]]
+
+      [:br]
+
+      [paragraph {:class "b"}
+       "Sehe das Gute, sei das Gute."]
+      [paragraph {:class "b i"}
+       "Wie kann ich heute anderen helfen?"]
+
+      [paragraph {:style {:border-bottom "1px dotted"}} [:br]]
+      [paragraph {:style {:border-bottom "1px dotted"}} [:br]]
+      [paragraph {:style {:border-bottom "1px dotted"}} [:br]]
+
+      [:h2 {:class "pt4"}
+       "Freie Übung zur Auswahl:"]
+
+      [paragraph
+       "– Gedanklich Segen schenken"]
+      [paragraph
+       "– Innere Fragen und Gedanken aufschreiben"]
+      [paragraph
+       "– Wie fühlt sich meine Seele heute (im Wort oder aufzeichnen)"]]]}
+
+
+   
+   {:title "Allgemeine Schritte"
+    :author "Mariana Munteanu"
+    :summary "Diät: Keto-diät.Diät nach Budwig Eigene Gesundheit in
+       eigenen Händen nehmen!"
+
+    :post
+    [:section {:class "mw6 center avenir ph3 ph0-l"}
+
+     [article-title "Allgemeine Schritte" "Mariana Munteanu"]
+
+     [:ol {:start 1}
+      [:li [paragraph
+            [:span
+             "Diät: Keto-diät." [:br]
+             "Diät nach Budwig."]]]]
+
+     [:ol {:start 2}
+      [:li [paragraph
+            [:span
+             "Eigene Gesundheit in eigenen Händen nehmen!" [:br]
+             "Buch zu empfehlen: "
+             [:a {:href "https://www.amazon.de/-/en/Dr-Kelly-Turner/dp/3424152684/ref=sr_1_1?crid=O5CJARLXUAB7"}
+              "9 Wege in ein krebsfreies Leben: Wahre Geschichten von
+              geheilten Menschen"]
+             ", von Kelly A. Turner."]]]]
+     
+     [:ol {:start 3}
+      [:li [paragraph
+            "Stärken das Immunsystem: Ernährung, in der Natur,
+            Meditation, Yoga, Vitamine und Mineralien."]]]
+
+
+     [:ol {:start 4}
+      [:li [paragraph
+            "Gedanken, Seele und Emotionen in Ordnung bringen.
+Lernen sich selbst zu lieben und innere Konflikte zu lösen. Offen für
+Neues werden."]]]
+
+
+     [:ol {:start 5}
+      [:li [paragraph
+            "Täglich Portion Lachen: Film schauen, Witze lesen…"]]]
+
+
+
+     [:ol {:start 6}
+      [:li [paragraph
+            "Dankbarkeit-Journal täglich halten: Gehirn lernt dadurch
+     positive Gedanken zu erstellen."]]]]}])
 
 
 
 
 (defn index []
-  [:<>
+  [:div
    [:header {:class "pv2 tc serif"}
     [logo]
     [nav]]
-   #_[section-posts-summary (get-posts)]
-   [section-post (first (get-posts))]
+   
+   ;;[section-posts-summary posts]
+   
+   ;;(:post (first posts))
+   (:post (second posts))
+   
    [footer]])

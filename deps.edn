@@ -1,13 +1,14 @@
 {:paths ["src/cljs" "src/cljc"]
  :deps {org.clojure/clojure {:mvn/version "1.11.1"}
-        org.clojure/clojurescript {:mvn/version "1.11.54"}
-        reagent/reagent {:mvn/version "1.1.1"}
-        cljsjs/react {:mvn/version "17.0.2-0"}
-        cljsjs/react-dom {:mvn/version "17.0.2-0"}
+        org.clojure/clojurescript {:mvn/version "1.11.60"}
         com.taoensso/timbre {:mvn/version "5.2.1"}
+        hiccup/hiccup {:mvn/version "2.0.0-alpha2"}
         dimovich/roll {:mvn/version "0.3.337"}}
 
  :aliases
  {:cider
   {:extra-paths ["resources"]
-   :extra-deps {com.bhauman/figwheel-main {:mvn/version "0.2.18"}}}}}
+   :extra-deps {com.bhauman/figwheel-main {:mvn/version "0.2.18"}
+                reagent/reagent {:mvn/version "1.1.1"}
+                cljsjs/react {:mvn/version "17.0.2-0"}
+                cljsjs/react-dom {:mvn/version "17.0.2-0"}}}}}

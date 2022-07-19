@@ -1,0 +1,8 @@
+{:roll/httpkit {:port 5000}
+
+ :roll/handler
+ {:routes
+  [["/" simplegyn.handler/handle-index]
+   ["/p/:slug"
+    {:name :posts
+     :get simplegyn.handler/handle-posts}]]}}

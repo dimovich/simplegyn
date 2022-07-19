@@ -4,8 +4,9 @@
 ;; add about
 
 ;; Backend
-;; routing
-
+;; - update roll [done]
+;; - routing
+;; - strip roll
 
 
 ;; Posts
@@ -51,3 +52,18 @@
 
 ;; markdown and tachyons customization
 ;; https://blakewilliams.me/posts/jekyll-markdown-and-tachyons
+
+
+
+
+(require '[hiccup.page :as hp])
+
+(hp/html5
+ [:head
+  [:title "SimpleGyn"]
+  [:meta {:charset "UTF-8"}]
+  [:meta {:name "viewport"
+          :content "width=device-width, initial-scale=1"}]
+  (hp/include-css "css/tachyons.min.css")]
+ [:body
+  ])

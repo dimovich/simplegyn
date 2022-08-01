@@ -5,7 +5,7 @@
 
 ;; Backend
 ;; - update roll [done]
-;; - routing
+;; - routing [done]
 ;; - strip roll
 
 

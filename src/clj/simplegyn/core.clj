@@ -1,5 +1,7 @@
 (ns simplegyn.core
-  (:require [roll.core :as r]))
+  (:require [roll.core :as r])
+  
+  (:gen-class))
 
 
 (defn -main []

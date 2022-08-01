@@ -1,4 +1,4 @@
-{:paths ["src/cljs" "src/cljc"]
+{:paths ["src/cljs" "src/cljc" "src/clj"]
  :deps {org.clojure/clojure {:mvn/version "1.11.1"}
         org.clojure/clojurescript {:mvn/version "1.11.60"}
         com.taoensso/timbre {:mvn/version "5.2.1"}
@@ -11,4 +11,8 @@
    :extra-deps {com.bhauman/figwheel-main {:mvn/version "0.2.18"}
                 reagent/reagent {:mvn/version "1.1.1"}
                 cljsjs/react {:mvn/version "17.0.2-0"}
-                cljsjs/react-dom {:mvn/version "17.0.2-0"}}}}}
+                cljsjs/react-dom {:mvn/version "17.0.2-0"}}}
+
+  :build
+  {:deps {io.github.clojure/tools.build {:git/tag "v0.8.3" :git/sha "0d20256"}}
+   :ns-default build}}}

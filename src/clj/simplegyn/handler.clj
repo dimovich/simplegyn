@@ -4,8 +4,9 @@
 
 
 (defn handle-index [req]
-  (resp/response (pages/index)))
+  (resp/response (pages/index req)))
 
 
 (defn handle-posts [req]
-  (resp/response (pages/posts)))
+  (assoc (resp/response (pages/posts req))
+         :content-type "text/html"))

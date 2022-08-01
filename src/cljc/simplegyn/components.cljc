@@ -8,7 +8,7 @@
       [:meta {:charset "UTF-8"}]
       [:meta {:name "viewport"
               :content "width=device-width, initial-scale=1"}]
-      (hp/include-css "css/tachyons.min.css")]))
+      (hp/include-css "/css/tachyons.min.css")]))
 
 
 
@@ -18,7 +18,7 @@
 
 (defn logo []
   [:div {:class "w-60 w-30-ns center"}
-   [:img {:src "img/logo.svg"}]])
+   [:img {:src "/img/logo.svg"}]])
 
 
 
@@ -34,9 +34,9 @@
 
 (defn nav []
   [:nav {:class "bt bb tc mw6 center mt2"}
-   (nav-button "Home")
-   (nav-button "Posts")
-   (nav-button "About")])
+   (nav-button "Home" {:href "/"})
+   (nav-button "Posts" {:href "/"})
+   (nav-button "About" {:href "/"})])
 
 
 
@@ -62,7 +62,7 @@
 (defn post-summary [post]
   [:article
    [:a {:class "db pv4 ph3 ph0-l no-underline black dim"
-        :href "#"}
+        :href (str "/p/" (:slug post))}
     [:div {:class "w-100"}
      [:h1 {:class "f3 fw1 baskerville mt0 lh-title"}
       (:title post)]
@@ -119,6 +119,7 @@
 (def posts
   [{:title "Dankbarkeitjournal"
     :author "Mariana Munteanu"
+    :slug "1"
     :summary "Neuroplastizität (die Fähigkeit des Gehirns, sich als
        Reaktion auf das Denken zu verändern) kann sowohl für uns als
        auch gegen uns arbeiten, denn das, worüber wir am meisten
@@ -208,6 +209,7 @@
    
    {:title "Allgemeine Schritte"
     :author "Mariana Munteanu"
+    :slug "2"
     :summary "Diät: Keto-diät.Diät nach Budwig Eigene Gesundheit in
        eigenen Händen nehmen!"
 
